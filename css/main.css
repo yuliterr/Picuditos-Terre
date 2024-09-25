@@ -202,7 +202,7 @@ footer .container {
     }
 
     .imgContainer{
-        background-image: url(/fotos/logo.jpeg);
+        background-image: url(../fotos/logo.jpeg);
         background-size: cover;
         background-position: center center;
         height: 500px;
