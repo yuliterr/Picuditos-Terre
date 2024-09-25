@@ -98,7 +98,7 @@ header a:hover {
     flex-direction: column;
     height: 90vh;
     color: rgb(255, 255, 255);
-    background-image: url(/fotos/chicos\ jugando\ 2.jpg);
+    background-image: url(../fotos/chicos\ jugando\ 2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
@@ -128,7 +128,7 @@ header a:hover {
 }
 
 .carta:first-child {
-    background-image: url(/fotos/campera.jpg );
+    background-image: url(../fotos/campera.jpg );
     background-position: center center;
     background-size: cover;
     padding: 50px;
@@ -137,7 +137,7 @@ header a:hover {
 }
 
 .carta:nth-child(2){
-    background-image: url(/fotos/ropa\ verano.jpg);
+    background-image: url(../fotos/ropa\ verano.jpg);
     background-position: center center;
     background-size: cover;
     background-size: cover;
@@ -147,7 +147,7 @@ header a:hover {
 }
 
 .carta:nth-child(3){
-    background-image: url(/fotos/buzo\ combinado\ osc.jpg);
+    background-image: url(../fotos/buzo\ combinado\ osc.jpg);
     background-position: center center;
     background-size: cover;
     background-size: cover;
@@ -157,7 +157,7 @@ header a:hover {
 }
    
 .carta:nth-child(4){
-    background-image: url(/fotos/buzo\ snopi\ naranja.jpg);
+    background-image: url(../fotos/buzo\ snopi\ naranja.jpg);
     background-position: center center;
     background-size: cover;
     background-size: cover;
