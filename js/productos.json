@@ -1,0 +1,83 @@
+[
+    {
+         "id": "buzo1",
+        "titulo": "Buzo",
+         "imagen":"../fotos/1.jpg",
+         "categoria": {
+             "nombre": "buzo",
+             "id": "buzo"
+         },
+         "precio": 15000
+    }, 
+    {
+         "id": "buzo2",
+         "titulo": "Buzo",
+         "imagen": "../fotos/2.jpg",
+         "categoria": {
+             "nombre": "buzo",
+             "id": "buzo"
+         },
+         "precio": 15000
+     },
+     {
+         "id": "buzo3",
+         "titulo": "Buzo",
+         "imagen": "../fotos/3.jpg",
+         "categoria": {
+             "nombre": "buzo",
+             "id": "buzo"
+         },
+         "precio": 18000
+     },
+     {
+         "id": "buzo4",
+         "titulo": "Buzo",
+         "imagen": "../fotos/4.jpg",
+         "categoria": {
+             "nombre": "buzo",
+             "id": "buzo"
+         },
+         "precio": 18000
+     },
+     {
+         "id": "buzo5",
+         "titulo": "Buzo",
+         "imagen": "../fotos/5.jpg",
+         "categoria": {
+             "nombre": "buzo",
+             "id": "buzo"
+         },
+         "precio": 13000
+     },
+     {
+         "id": "buzo6",
+         "titulo": "Buzo",
+         "imagen": "../fotos/6.jpg",
+         "categoria": {
+             "nombre": "buzo",
+             "id": "buzo"
+         },
+         "precio": 22000
+     },
+     {
+         "id": "buzo7",
+         "titulo": "Buzo",
+         "imagen": "../fotos/7.jpg",
+         "categoria": {
+             "nombre": "buzo",
+             "id": "buzo"
+         },
+         "precio": 15000
+     },
+     {
+         "id": "buzo8",
+         "titulo": "Buzo",
+         "imagen": "../fotos/8.jpg",
+         "categoria": {
+             "nombre": "buzo",
+             "id": "buzo"
+         },
+         "precio": 15000
+     }
+]
+

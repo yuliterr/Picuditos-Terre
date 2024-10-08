@@ -1,98 +1,29 @@
 let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
 
 
-const productos = [
-    {
-         id: "buzo-animales-claro",
-         titulo: "Animales claros",
-         imagen: "../fotos/buzo animales claro.jpg",
-         categoria: {
-             nombre: "buzo",
-             id: "buzo"
-         },
-         precio: 15000
-    }, 
-    {
-         id: "buzo-animales-oscuro",
-         titulo: "Animales oscuros",
-         imagen: "../fotos/buzo animales negro.jpg",
-         categoria: {
-             nombre: "buzo",
-             id: "buzo"
-         },
-         precio: 15000
-     },
-     {
-         id: "buzo-combinado-claro",
-         titulo: "Combinado",
-         imagen: "../fotos/buzo combinado claro.jpg",
-         categoria: {
-             nombre: "buzo",
-             id: "buzo"
-         },
-         precio: 18000
-     },
-     {
-         id: "buzo-combinado-oscuro",
-         titulo: "Combinado",
-         imagen: "../fotos/buzo combinado osc.jpg",
-         categoria: {
-             nombre: "buzo",
-             id: "buzo"
-         },
-         precio: 18000
-     },
-     {
-         id: "buzo-rosa",
-         titulo: "Buzo rosa",
-         imagen: "../fotos/buzo rosa.jpg",
-         categoria: {
-             nombre: "buzo",
-             id: "buzo"
-         },
-         precio: 13000
-     },
-     {
-         id: "buzo-y-pantalon",
-         titulo: "Buzo y pantalon",
-         imagen: "../fotos/buzo y pantalon.jpg",
-         categoria: {
-             nombre: "buzo",
-             id: "buzo"
-         },
-         precio: 22000
-     },
-     {
-         id: "buzo-snupy-n",
-         titulo: "Buzo snopy",
-         imagen: "../fotos/buzo snopi naranja.jpg",
-         categoria: {
-             nombre: "buzo",
-             id: "buzo"
-         },
-         precio: 15000
-     },
-     {
-         id: "buzo-snupy-c",
-         titulo: "Buzo snopy",
-         imagen: "../fotos/buzo snupi claro.jpg",
-         categoria: {
-             nombre: "buzo",
-             id: "buzo"
-         },
-         precio: 15000
-     },
- ];
+let productos = []
+    fetch("../js/productos.json")
+    .then(response => response.json())
+    .then (data => {
+        productos = data;
+        cargarProductos(productos);
+    })
 
 
 const contenedorProductos = document.querySelector("#contenedor-productos");
 const carritoVacio = document.querySelector("#carrito-vacio");
 const carritoProductos = document.querySelector("#carrito-productos");
 const carritoTotal = document.querySelector("#carrito-total");
+const numerito = document.querySelector("#numerito");
 
-productos.forEach((producto) => {
-    let div = document.createElement("div");
-    div.classList.add("producto");
+
+
+
+function cargarProductos(productos) {
+
+    productos.forEach((producto) => {
+        let div = document.createElement("div");
+        div.classList.add("producto");
 
     div.innerHTML = `
         <img class="producto-imagen" src="${producto.imagen}" alt="${producto.titulo}">
@@ -106,11 +37,24 @@ productos.forEach((producto) => {
 
     button.addEventListener("click", () => {
         agregarAlCarrito(producto);
+        Toastify({
+            text: "Agregaste un producto al carrito",
+            duration: 3000,
+            close: true,
+            style: {
+                background: "linear-gradient(to right, rgb(255, 187, 60), rgb(255, 105, 5))",
+                color: "black",
+            },
+        }).showToast();
     });
 
     div.append(button);
     contenedorProductos.append(div);
+
 });
+}
+
+
 
 function actualizarCarrito() {
     if (carrito.length === 0) {
@@ -125,6 +69,7 @@ function actualizarCarrito() {
             let div = document.createElement("div");
             div.classList.add("carrito-producto");
             div.innerHTML = `
+            <img class="producto-imagenes" src="${producto.imagen}" alt="${producto.titulo}">
                 <h3>${producto.titulo}</h3>
                 <p>$${producto.precio}</p>
                 <p>Cant: ${producto.cantidad}</p>
@@ -156,6 +101,17 @@ function actualizarCarrito() {
             });
             div.append(button);
             carritoProductos.append(div);
+
+            button.addEventListener ("click", () => {
+                Toastify({
+                    text: "Borraste un producto del carrito",
+                    duration: 3000,
+                    close: true,
+                    style: {
+                        color: "black",
+                      },
+                  }).showToast();
+            })
         });
         
     }
@@ -172,6 +128,7 @@ function agregarAlCarrito(producto) {
         carrito.push({ ...producto, cantidad: 1 });
     }
     actualizarCarrito();
+    actualizarNumerito();
 }
 
 function aumentarCantidad(producto) {
@@ -199,6 +156,7 @@ function borrarDelCarrito(producto) {
     carrito.splice(indice, 1);
 
     actualizarCarrito();
+    actualizarNumerito();
 }
 
 function actualizarTotal(){
@@ -207,9 +165,8 @@ function actualizarTotal(){
     
 }
 
-actualizarCarrito();
 
 function actualizarNumerito() {
-    let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
+    let nuevoNumerito = carrito.reduce((acc, producto) => acc + producto.cantidad, 0);
     numerito.innerText = nuevoNumerito;
 }
