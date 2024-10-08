@@ -128,7 +128,7 @@ header a:hover {
 }
 
 .carta:first-child {
-    background-image: url(../fotos/campera.jpg );
+    background-image: url(../fotos/1.jpg );
     background-position: center center;
     background-size: cover;
     padding: 50px;
@@ -147,7 +147,7 @@ header a:hover {
 }
 
 .carta:nth-child(3){
-    background-image: url(../fotos/buzo\ combinado\ osc.jpg);
+    background-image: url(../fotos/2.jpg);
     background-position: center center;
     background-size: cover;
     background-size: cover;
@@ -157,7 +157,7 @@ header a:hover {
 }
    
 .carta:nth-child(4){
-    background-image: url(../fotos/buzo\ snopi\ naranja.jpg);
+    background-image: url(../fotos/3.jpg);
     background-position: center center;
     background-size: cover;
     background-size: cover;
@@ -172,6 +172,10 @@ footer .container {
     justify-content: center;
     align-items: center;
     background-color: rgb(255, 187, 60);
+}
+
+.btn {
+    margin-bottom: 1rem;
 }
 
 @media (min-width: 720px){
@@ -405,6 +409,10 @@ main {
     text-transform: uppercase;
     border-radius: 10px;
     gap: 1rem;
+}
+
+.carrito-acciones-total {
+    font-size: 2rem;
 }
 
 .carrito-comprar {
