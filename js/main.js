@@ -15,8 +15,7 @@ const carritoVacio = document.querySelector("#carrito-vacio");
 const carritoProductos = document.querySelector("#carrito-productos");
 const carritoTotal = document.querySelector("#carrito-total");
 const numerito = document.querySelector("#numerito");
-
-
+const botonComprar = document.querySelector("#carrito-acciones-comprar")
 
 
 function cargarProductos(productos) {
@@ -53,7 +52,6 @@ function cargarProductos(productos) {
 
 });
 }
-
 
 
 function actualizarCarrito() {
@@ -119,6 +117,7 @@ function actualizarCarrito() {
         localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
+
 function agregarAlCarrito(producto) {
     let itemEncontrado = carrito.find((item) => item.id === producto.id);
 
@@ -130,6 +129,7 @@ function agregarAlCarrito(producto) {
     actualizarCarrito();
     actualizarNumerito();
 }
+
 
 function aumentarCantidad(producto) {
     let itemEncontrado = carrito.find((item) => item.id === producto.id);
@@ -151,6 +151,7 @@ function reducirCantidad(producto) {
     }
 }
 
+
 function borrarDelCarrito(producto) {
     let indice = carrito.findIndex((item) => item.id === producto.id);
     carrito.splice(indice, 1);
@@ -158,6 +159,7 @@ function borrarDelCarrito(producto) {
     actualizarCarrito();
     actualizarNumerito();
 }
+
 
 function actualizarTotal(){
     let total = carrito.reduce((acc, prod) => acc + (prod.precio * prod.cantidad), 0);
